@@ -1,0 +1,110 @@
+{% load blog_tags keyword_tags mezzanine_tags i18n %}
+
+{% block blog_recent_posts %}
+{% blog_recent_posts 5 as recent_posts %}
+{% if recent_posts %}
+<h4>{% trans "Recent Posts" %}</h4>
+<ul class="list-unstyled recent-posts">
+{% for recent_post in recent_posts %}
+<li>
+    {% spaceless %}
+    <a href="{{ recent_post.get_absolute_url }}" id="post-title">
+        {% if settings.BLOG_USE_FEATURED_IMAGE and recent_post.featured_image %}
+        <img src="{{ MEDIA_URL }}{% thumbnail recent_post.featured_image 24 24 %}">
+        {% endif %}
+    {{ recent_post.title }}
+    </a>
+    {% endspaceless %}
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endblock %}
+
+{% block blog_months %}
+{% blog_months as months %}
+{% if months %}
+
+
+<h4>{% trans "Archive" %}</h4>
+{% for month in months %}
+    {% ifchanged month.date.year %}
+        {% if not forloop.first %}</ul>{% endif %}
+        <h6>{{ month.date.year }}</h6><ul class="list-unstyled" id="blog-archieve">
+    {% endifchanged %}
+    <li><a href="{% url "blog_post_list_month" year=month.date.year month=month.date.month %}"
+        ><i class="fa fa-angle-double-right"></i>{{ month.date|date:"F" }}  {{month.date.year}}</a> <span class="pull-right">({{ month.post_count }})</span></li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endblock %}
+
+<!--<li><a href="#">Computers <span class="badge">04</span></a></li>-->
+                                    <!--<li><a href="#">Smartphone <span class="badge">10</span></a></li>-->
+                                    <!--<li><a href="#">Gedgets <span class="badge">06</span></a></li>-->
+                                    <!--<li><a href="#">Technology <span class="badge">25</span></a>-->
+                                    <!--</li>-->
+
+{% block blog_categories %}
+{% blog_categories as categories %}
+{% if categories %}
+<h3 >{% trans "Categories" %}</h3>
+<ul class="list-unstyled" id="blog-category">
+{% for category in categories %}
+<li><a href="{% url "blog_post_list_category" category.slug %}"
+    >{{ category }}<span class="badge">({{ category.post_count }})</span></a> </li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endblock %}
+
+{% block blog_keywords %}
+{% keywords_for blog.blogpost as tags %}
+{% if tags %}
+<h4>{% trans "Tags" %}</h4>
+<ul class="list-inline tag-cloud">
+{% for tag in tags %}
+<li>
+    <a href="{% url "blog_post_list_tag" tag.slug %}"
+        class="tag-weight-{{ tag.weight }}">{{ tag }}</a>
+    ({{ tag.item_count }})
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endblock %}
+
+
+{% block blog_authors %}
+{% blog_authors as authors %}
+{% if authors %}
+<h4>{% trans "Authors" %}</h4>
+<ul class="list-unstyled" id="authors">
+{% for author in authors %}
+    <li id="authors" class="fa fa-angle-double-right"><a href="{% url "blog_post_list_author" author.username %}"
+        ><i class="fa fa-angle-double-right"></i>{{ author.get_full_name|default:author.username }}<span class="pull-right">({{ author.post_count }})</span></a>
+        </li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endblock %}
+
+{% block blog_feeds %}
+<h4>{% trans "Feeds" %}</h4>
+{% if tag %}
+    <a href="{% url "blog_post_feed_tag" tag.slug "rss" %}">{% trans "RSS" %}</a> /
+    <a href="{% url "blog_post_feed_tag" tag.slug "atom" %}">{% trans "Atom" %}</a>
+{% endif %}
+{% if category %}
+    <a href="{% url "blog_post_feed_category" category.slug "rss" %}">{% trans "RSS" %}</a> /
+    <a href="{% url "blog_post_feed_category" category.slug "atom" %}">{% trans "Atom" %}</a>
+{% endif %}
+{% if author %}
+    <a href="{% url "blog_post_feed_author" author.username "rss" %}">{% trans "RSS" %}</a> /
+    <a href="{% url "blog_post_feed_author" author.username "atom" %}">{% trans "Atom" %}</a>
+{% endif %}
+{% if not tag and not category and not author %}
+    <a href="{% url "blog_post_feed" "rss" %}">{% trans "RSS" %}</a> /
+    <a href="{% url "blog_post_feed" "atom" %}">{% trans "Atom" %}</a>
+{% endif %}
+{% endblock %}
