@@ -1,90 +1,92 @@
-{% extends "base.html" %}
-{% load i18n %}
-{% load staticfiles %}
+<!--{% extends "base.html" %}-->
+<!--{% load i18n %}-->
+<!--{% load mezzanine_tags staticfiles %}-->
 
-{% block meta_title %}{% trans "Home" %}{% endblock %}
-{% block title %}{% trans "Home" %}{% endblock %}
+<!--{% block meta_title %}{% trans "Home" %}{% endblock %}-->
+<!--{% block title %}{% trans "Home" %}{% endblock %}-->
 
-{% block breadcrumb_menu %}
-<li class="active">{% trans "Home" %}</li>
-{% endblock %}
+<!--{% block breadcrumb_menu %}-->
+<!--<li class="active">{% trans "Home" %}</li>-->
+<!--{% endblock %}-->
 
-{% block main %}
-      <!-- Carousel begins -->
-       <div id="owl" class="owl-carousel owl-theme" style="height: 100%; width: 100%">
-           <div class="item"><img src="{% static 'images/carousel/fullimage1.jpg' %}" alt="Owl Image"></div>
-           <div class="item"><img src="{% static 'images/carousel/fullimage2.jpg' %}" alt="Owl Image"></div>
-           <div class="item"><img src="{% static 'images/carousel/fullimage3.jpg' %}" alt="Owl Image"></div>
-       </div>
+<!--{% block main %}-->
+      <!--&lt;!&ndash; Carousel begins &ndash;&gt;-->
+       <!--<div id="owl" class="owl-carousel owl-theme">-->
+           <!--<div class="item"><img src="{% static 'images/carousel/fullimage1.jpg' %}" alt="Owl Image"></div>-->
+           <!--<div class="item"><img src="{% static 'images/carousel/fullimage2.jpg' %}" alt="Owl Image"></div>-->
+           <!--<div class="item"><img src="{% static 'images/carousel/fullimage3.jpg' %}" alt="Owl Image"></div>-->
+           <!--<div class="item"><img src="{% static 'images/carousel/fullimage4.png' %}" alt="Owl Image"></div>-->
+           <!--<div class="item"><img src="{% static 'images/carousel/fullimage5.jpg' %}" alt="Owl Image"></div>-->
+       <!--</div>-->
 
+<!--&lt;!&ndash;<div class="section" >&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="container">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="col-md-12" id="about-us"><h2>About Us</h2></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<!--{% endblock %}-->
+
+
+
+<!--{% block content %}-->
 <!--<div class="section" >-->
             <!--<div class="container">-->
                 <!--<div class="row">-->
                     <!--<div class="col-md-12" id="about-us"><h2>About Us</h2></div>-->
                 <!--</div>-->
             <!--</div>-->
-        <!--</div>-->
+<!--</div>-->
 
-{% endblock %}
-
-
-
-{% block content %}
-<div class="section" >
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12" id="about-us"><h2>About Us</h2></div>
-                </div>
-            </div>
-</div>
-
-<div class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="text-center">Team</h1>
-                        <p class="text-center">We are a group of skilled individuals.</p>
-                    </div>
-                </div>
+<!--<div class="section">-->
+            <!--<div class="container">-->
+                <!--<div class="row">-->
+                    <!--<div class="col-md-12">-->
+                        <!--<h1 class="text-center">Team</h1>-->
+                        <!--<p class="text-center">We are a group of skilled individuals.</p>-->
+                    <!--</div>-->
+                <!--</div>-->
 
 
-                <div class="row" style="padding-left: 154px">
-                    <div class="col-md-2">
-                        <img src="http://pingendo.github.io/pingendo-bootstrap/assets/user_placeholder.png" class="img-circle img-responsive">
-                    </div>
-                    <div class="col-md-4">
-                        <h3 class="text-left">John Doe</h3>
-                        <p class="text-left">He is the best</p>
-                    </div>
+                <!--<div class="row" style="padding-left: 154px">-->
+                    <!--<div class="col-md-2">-->
+                        <!--<img src="http://pingendo.github.io/pingendo-bootstrap/assets/user_placeholder.png" class="img-circle img-responsive">-->
+                    <!--</div>-->
+                    <!--<div class="col-md-4">-->
+                        <!--<h3 class="text-left">John Doe</h3>-->
+                        <!--<p class="text-left">He is the best</p>-->
+                    <!--</div>-->
 
-                    <div class="col-md-2">
-                        <img src="http://pingendo.github.io/pingendo-bootstrap/assets/user_placeholder.png" class="img-circle img-responsive">
-                    </div>
+                    <!--<div class="col-md-2">-->
+                        <!--<img src="http://pingendo.github.io/pingendo-bootstrap/assets/user_placeholder.png" class="img-circle img-responsive">-->
+                    <!--</div>-->
 
-                    <div class="col-md-4">
-                        <h3 class="text-left">John Doe</h3>
-                        <p class="text-left">the best.</p>
-                    </div>
-                </div>
+                    <!--<div class="col-md-4">-->
+                        <!--<h3 class="text-left">John Doe</h3>-->
+                        <!--<p class="text-left">the best.</p>-->
+                    <!--</div>-->
+                <!--</div>-->
 
-                <div class="row" style="padding-left: 154px">
-                    <div class="col-md-2">
-                        <img src="http://pingendo.github.io/pingendo-bootstrap/assets/user_placeholder.png" class="img-circle img-responsive">
-                    </div>
-                    <div class="col-md-4">
-                        <h3 class="text-left">John Doe</h3>
-                        <p class="text-left">the best</p>
-                    </div>
-                    <div class="col-md-2">
-                        <img src="http://pingendo.github.io/pingendo-bootstrap/assets/user_placeholder.png" class="img-circle img-responsive">
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <h3 class="text-left">John Doe</h3>
-                        <p class="text-left">the best</p>
-                    </div>
-                </div>
+                <!--<div class="row" style="padding-left: 154px">-->
+                    <!--<div class="col-md-2">-->
+                        <!--<img src="http://pingendo.github.io/pingendo-bootstrap/assets/user_placeholder.png" class="img-circle img-responsive">-->
+                    <!--</div>-->
+                    <!--<div class="col-md-4">-->
+                        <!--<h3 class="text-left">John Doe</h3>-->
+                        <!--<p class="text-left">the best</p>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-2">-->
+                        <!--<img src="http://pingendo.github.io/pingendo-bootstrap/assets/user_placeholder.png" class="img-circle img-responsive">-->
+                    <!--</div>-->
+                    <!--<div class="col-md-4 text-center">-->
+                        <!--<h3 class="text-left">John Doe</h3>-->
+                        <!--<p class="text-left">the best</p>-->
+                    <!--</div>-->
+                <!--</div>-->
 
-            </div>
-</div>
+            <!--</div>-->
+<!--</div>-->
 
-{% endblock %}
+<!--{% endblock %}-->

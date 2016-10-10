@@ -1,0 +1,21 @@
+{% extends "pages/page.html" %}
+
+{% load pages_tags mezzanine_tags %}
+
+
+{% block main %}
+
+<div>
+    {% if page.aboutus.cover %}
+        <img src="{{ MEDIA_URL }}{% thumbnail page.aboutus.cover 800 200 %}" class="page_image">
+    {% endif %}
+</div>
+
+<h3  class="page_title">{{ page.aboutus.title }}</h3>
+{{ block.super }}
+
+{% editable page.aboutus.content %}
+    {{ page.aboutus.content|richtext_filters|safe }}
+{% endeditable %}
+
+{% endblock %}

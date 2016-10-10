@@ -1,10 +1,236 @@
-{% extends "pages/richtextpage.html" %}
+<!--<!doctype html>-->
+<!--<html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>-->
+<!--{% load pages_tags mezzanine_tags i18n staticfiles %}-->
+<!--{% load blog_tags keyword_tags mezzanine_tags i18n %}-->
 
-{% block main %}
-<!--
-This template is provided as a custom template for the homepage, for
-when it is configured as an editable page in the navigation tree. Feel
-free to modify it.
--->
-{{ block.super }}
-{% endblock %}
+<!--<head>-->
+<!--<meta http-equiv="Content-type" content="text/html; charset=utf-8">-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--<meta name="keywords" content="{% block meta_keywords %}{% endblock %}">-->
+<!--<meta name="description" content="{% block meta_description %}{% endblock %}">-->
+<!--<title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>-->
+<!--<link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">-->
+
+<!--{% ifinstalled mezzanine.blog %}-->
+<!--<link rel="alternate" type="application/rss+xml" title="RSS" href="{% url 'blog_post_feed' 'rss' %}">-->
+<!--<link rel="alternate" type="application/atom+xml" title="Atom" href="{% url 'blog_post_feed' 'atom' %}">-->
+<!--{% endifinstalled %}-->
+
+ <!--<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
+<!--{% compress css %}-->
+<!--<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">-->
+<!--<link rel="stylesheet" href="{% static 'css/mezzanine.css' %}">-->
+<!--<link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}">-->
+<!--<link rel="stylesheet" href="{% static 'css/index.css' %}">-->
+<!--<link rel="stylesheet" href="{% static 'css/main.css' %}">-->
+
+<!--&lt;!&ndash; OWL Carousel css&ndash;&gt;-->
+<!--<link rel="stylesheet" href="{% static 'css/owlcarousel/owl.carousel.css' %}">-->
+<!--&lt;!&ndash; Default Theme &ndash;&gt;-->
+<!--<link rel="stylesheet" href="{% static 'css/owlcarousel/owl.theme.css' %}" >-->
+<!--<link rel="stylesheet" href="{% static 'css/owlcarousel/owl.transitions.css' %}" >-->
+<!--<link rel="stylesheet" href="{% static 'css/owlcarousel/custom_css.css' %}">-->
+
+<!--{% if LANGUAGE_BIDI %}-->
+<!--<link rel="stylesheet" href="{% static 'css/bootstrap-rtl.css' %}">-->
+<!--{% endif %}-->
+<!--{% ifinstalled cartridge.shop %}-->
+<!--<link rel="stylesheet" href="{% static 'css/cartridge.css' %}">-->
+<!--{% if LANGUAGE_BIDI %}-->
+<!--<link rel="stylesheet" href="{% static 'css/cartridge.rtl.css' %}">-->
+<!--{% endif %}-->
+<!--{% endifinstalled %}-->
+<!--{% block extra_css %}{% endblock %}-->
+<!--{% endcompress %}-->
+
+<!--{% compress js %}-->
+<!--<script src="{% static 'mezzanine/js/'|add:settings.JQUERY_FILENAME %}"></script>-->
+<!--<script src="{% static 'js/bootstrap.js' %}"></script>-->
+<!--<script src="{% static 'js/bootstrap-extras.js' %}"></script>-->
+<!--<script src="{% static 'js/owl-carousel/owl.carousel.js' %}"></script>-->
+<!--<script src="{% static 'js/main.js' %}"></script>-->
+<!--{% block extra_js %}{% endblock %}-->
+<!--{% endcompress %}-->
+
+<!--&lt;!&ndash;[if lt IE 9]>-->
+<!--<script src="{% static 'js/html5shiv.js' %}"></script>-->
+<!--<script src="{% static 'js/respond.min.js' %}"></script>-->
+<!--<![endif]&ndash;&gt;-->
+
+<!--{% block extra_head %}{% endblock %}-->
+
+
+<!--</head>-->
+
+<!--<body id="{% block body_id %}body{% endblock %}">-->
+
+<!--&lt;!&ndash;<div class="section section-primary">&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="container">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="col-md-12">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<h1>&nbsp;ASESU &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;AFRICAN&ndash;&gt;-->
+                            <!--&lt;!&ndash;STUDENTS UNION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h1>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<p></p>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--<div class="navbar navbar-default navbar-fixed-top" role="navigation">-->
+    <!--<div class="section section-primary">-->
+            <!--<div class="container">-->
+                <!--<div class="row">-->
+                    <!--<div class="col-md-12">-->
+                        <!--<h1>&nbsp;ASESU &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;AFRICAN-->
+                            <!--STUDENTS UNION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-->
+                            <!--&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h1>-->
+                        <!--<p></p>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+    <!--</div>-->
+<!--<div class="container">-->
+<!--<div class="navbar-header">-->
+    <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">-->
+        <!--<span class="sr-only">{% trans "Toggle Navigation" %}</span>-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+    <!--</button>-->
+    <!--&lt;!&ndash;{% block navbar_title %}&ndash;&gt;-->
+    <!--&lt;!&ndash;{% if settings.SITE_TITLE %}<a class="navbar-brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}&ndash;&gt;-->
+    <!--&lt;!&ndash;{% if settings.SITE_TAGLINE %}<p class="navbar-text visible-lg">{{ settings.SITE_TAGLINE }}</p>{% endif %}&ndash;&gt;-->
+    <!--&lt;!&ndash;{% endblock%}&ndash;&gt;-->
+<!--</div>-->
+
+<!--<div class="collapse navbar-collapse dropdown-div">-->
+    <!--<ul class="nav navbar-nav navbar-right ">-->
+        <!--{% block navbar_search_form %}{% search_form "" %}{% endblock %}-->
+        <!--{% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock%}-->
+    <!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="container">-->
+<!--{% nevercache %}-->
+<!--{% if messages %}-->
+<!--<div class="messages">-->
+<!--{% for message in messages %}-->
+<!--<div class="alert alert-dismissable alert-{{ message.tags }}" data-alert="alert">-->
+    <!--<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>-->
+    <!--&lt;!&ndash;{{ message }}&ndash;&gt;-->
+<!--</div>-->
+<!--{% endfor %}-->
+<!--</div>-->
+<!--{% endif %}-->
+<!--{% endnevercache %}-->
+
+<!--<h1>{% block title %}{% endblock %}</h1>-->
+
+<!--<ul class="breadcrumb">-->
+<!--{% spaceless %}-->
+<!--{% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}-->
+<!--{% endspaceless %}-->
+<!--</ul>-->
+
+<!--</div>-->
+
+<!--<div class="section">-->
+            <!--<div class="container">-->
+                <!--<div class="row">-->
+                    <!--<div class="col-md-2" style="margin-right: -4px">-->
+                        <!--{% block left_panel %}-->
+                        <!--<div class="panel panel-default tree" id="tree" style="margin-right: 0">{% page_menu "pages/menus/tree.html" %}</div>-->
+                        <!--{% endblock %}-->
+                    <!--</div>-->
+
+                        <!--<div class="col-md-8 middle" style="height: 100%; padding: 0; padding-right: 9px">-->
+                        <!--{% block main %}{% endblock %}-->
+                        <!--</div>-->
+
+                    <!--<div class="col-md-2" id="right-column">-->
+                        <!--{% block right_panel %}-->
+                            <!--<div style="margin-left: -15px">-->
+                                <!--<div id="news-tip">LATEST NEWS</div>-->
+                                <!--<div id="latest-news-content">-->
+                                    <!--{% block blog_recent_posts %}-->
+                                    <!--{% blog_recent_posts 6 as recent_posts %}-->
+                                    <!--{% if recent_posts %}-->
+                                    <!--<ul class="list-unstyled recent-posts">-->
+                                        <!--{% for recent_post in recent_posts %}-->
+                                        <!--<li>-->
+                                           <!--{% spaceless %}-->
+                                             <!--<a href="{{ recent_post.get_absolute_url }}" id="post-title">-->
+                                                  <!--{% if settings.BLOG_USE_FEATURED_IMAGE and recent_post.featured_image %}-->
+                                                  <!--<img src="{{ MEDIA_URL }}{% thumbnail recent_post.featured_image 24 24 %}">-->
+                                                  <!--{% endif %}-->
+                                              <!--{{ recent_post.title|truncatewords:3}}-->
+                                              <!--</a>-->
+                                           <!--{% endspaceless %}-->
+                                        <!--</li>-->
+                                        <!--{% endfor %}-->
+                                    <!--</ul>-->
+                                    <!--{% endif %}-->
+                                    <!--{% endblock %}-->
+
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--{% endblock %}-->
+                    <!--</div>-->
+
+
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+
+<!--<div>-->
+    <!--{% block content %}{% endblock %}-->
+<!--</div>-->
+
+<!--<footer class="section section-primary">-->
+            <!--<div class="container">-->
+                <!--<div class="row" id="row1">-->
+
+                    <!--<p class="site-info text-center">-->
+                       <!--{% ifinstalled mezzanine.mobile %}-->
+                           <!--<span class="separator">|</span>-->
+                           <!--<a href="{% url 'set_device' 'mobile' %}?next={{ request.path }}">{% trans "View Mobile Site" %}</a>-->
+                       <!--{% endifinstalled %}-->
+                    <!--</p>-->
+                    <!--<div class="col-sm-6">-->
+                        <!--<h1 id="as">ASESU</h1>-->
+                        <!--<p>telephone: 08137627240</p>-->
+                    <!--</div>-->
+                    <!--<div class="col-sm-6">-->
+                        <!--<p class="text-info text-right">-->
+                            <!--<br>-->
+                            <!--<br>-->
+                        <!--</p>-->
+                        <!--<div class="row">-->
+                            <!--<div class="col-md-12 hidden-lg hidden-md hidden-sm text-left">-->
+                                <!--<a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a>-->
+                                <!--<a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>-->
+                                <!--<a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>-->
+                                <!--<a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="row">-->
+                            <!--<div class="col-md-12 hidden-xs text-right">-->
+                                <!--<a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a>-->
+                                <!--<a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>-->
+                                <!--<a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>-->
+                                <!--<a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</footer>-->
+<!--{% block footer_js %}-->
+<!--{% include "includes/footer_scripts.html" %}-->
+<!--{% endblock %}-->
+
+<!--</body>-->
+<!--</html>-->

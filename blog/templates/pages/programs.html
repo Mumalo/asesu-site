@@ -1,0 +1,23 @@
+{% extends "pages/page.html" %}
+{% load embed_video_tags %}
+
+{% load pages_tags mezzanine_tags %}
+
+
+{% block main %}
+<h3  class="page_title">{{ page.programs.title }}</h3>
+{{ block.super }}
+
+{% if page.programs.video_url %}
+
+<div style="padding-top: 15px">
+    {% video page.programs.video_url "600x400" %}
+</div>
+  {% endif %}
+
+
+{% editable page.programs.content %}
+    {{ page.programs.content|richtext_filters|safe }}
+{% endeditable %}
+
+{% endblock %}

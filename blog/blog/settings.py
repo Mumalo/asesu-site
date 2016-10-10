@@ -146,11 +146,11 @@ FILE_UPLOAD_PERMISSIONS = 0o644
 DATABASES = {
     "default": {
         # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
-        "ENGINE": "django.db.backends.",
+        "ENGINE": "django.db.backends.mysql",
         # DB name or path to database file if using sqlite3.
-        "NAME": "",
+        "NAME": "asesu_db",
         # Not used with sqlite3.
-        "USER": "",
+        "USER": "root",
         # Not used with sqlite3.
         "PASSWORD": "",
         # Set to empty string for localhost. Not used with sqlite3.
@@ -159,6 +159,7 @@ DATABASES = {
         "PORT": "",
     }
 }
+
 
 
 #########
@@ -250,9 +251,11 @@ INSTALLED_APPS = (
     "mezzanine.forms",
     "mezzanine.galleries",
     "mezzanine.twitter",
-    "blog_app",
-    # "mezzanine.accounts",
+    "embed_video",
+    "mezzanine.accounts",
     "mezzanine.mobile",
+    "blog_app",
+    # "south",
 )
 
 # List of middleware classes to use. Order is important; in the request phase,

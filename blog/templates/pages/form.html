@@ -26,7 +26,7 @@
         {% fields_for form %}
         <div class="form-actions">
             <input class="btn btn-primary btn-lg" type="submit"
-                value="{% if page.form.button_text %}{{ page.form.button_text }}{% else %}{% trans "Submit" %}{% endif %}">
+                value="{% if page.form.button_text %}{{ page.form.button_text }}{% else %}{% trans 'Submit' %}{% endif %}">
         </div>
     </form>
 {% endif %}
